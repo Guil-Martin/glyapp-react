@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Grid } from "@material-ui/core";
+import { makeStyles, Grid, Paper } from "@material-ui/core";
 
 import { File } from "./File";
 
@@ -7,15 +7,20 @@ export const Files = () => {
 	const classes = useStyles();
 
 	return (
-		<Grid container justifyContent="center">
-			<File />
-			<File />
-			<File />
-			<File />
+		<Grid className={classes.container} container justifyContent="center">
+			<Paper className={classes.filesWrapper} variant="outlined">
+				<File />
+				<File />
+				<File />
+				<File />
+			</Paper>
 		</Grid>
 	);
 };
 
 const useStyles = makeStyles((theme) => ({
-	container: {},
+	filesWrapper: {
+		width: "100%",
+		backgroundColor: "rgba(50,20,50)",
+	},
 }));
