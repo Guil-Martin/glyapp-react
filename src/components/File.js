@@ -11,7 +11,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 
-export const File = () => {
+export const File = ({ fileName }) => {
 	const classes = useStyles();
 
 	const handleDelete = () => {
@@ -31,7 +31,7 @@ export const File = () => {
 			<Paper elevation={3} className={classes.fileWrapper}>
 				<Typography>Type : Capteur</Typography>
 				<Typography>Format: Csv</Typography>
-				<Typography>Name : Medtronics</Typography>
+				<Typography>Name : {fileName}</Typography>
 				<IconButton
 					color="primary"
 					className={classes.iconDelete}

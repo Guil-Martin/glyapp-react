@@ -2,12 +2,19 @@ import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { makeStyles, Grid, Paper, Typography } from "@material-ui/core";
 
+import { useDispatch } from "react-redux";
+import { addFile } from "../app/uploadedFiles";
+
 const DragNDrop = () => {
 	const classes = useStyles();
 
+	const dispatch = useDispatch();
+
 	const onDrop = useCallback((acceptedFiles) => {
-		console.log(acceptedFiles);
+		console.log(acceptedFiles[acceptedFiles.length - 1].name);
+		dispatch(addFile(acceptedFiles[acceptedFiles.length - 1].name));
 	}, []);
+
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
 	return (

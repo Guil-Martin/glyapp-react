@@ -1,6 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
-import { makeStyles, Grid, Button } from "@material-ui/core";
+
+// Redux
+import { store } from "./app/store";
+import { Provider } from "react-redux";
+
+// MUI
+import { makeStyles, Grid } from "@material-ui/core";
 
 // Components
 import Files from "./components/Files";
@@ -10,18 +16,16 @@ const App = () => {
 	const classes = useStyles();
 
 	return (
-		<Grid container justifyContent="center" className={classes.container}>
-			<Grid
-				container
-				justifyContent="center"
-				className={classes.container}
-			>
-				<DragNDrop />
+		<Provider store={store}>
+			<Grid container justifyContent="center" className={classes.container}>
+				<Grid container justifyContent="center" className={classes.container}>
+					<DragNDrop />
+				</Grid>
+				<Grid item xs={12} sm={6} md={6} className={classes.container}>
+					<Files />
+				</Grid>
 			</Grid>
-			<Grid item xs={12} sm={6} md={6} className={classes.container}>
-				<Files />
-			</Grid>
-		</Grid>
+		</Provider>
 	);
 };
 
