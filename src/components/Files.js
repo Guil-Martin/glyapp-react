@@ -3,7 +3,7 @@ import { makeStyles, Grid, Paper } from "@material-ui/core";
 
 import { File } from "./File";
 
-export const Files = () => {
+const Files = () => {
 	const classes = useStyles();
 
 	return (
@@ -17,6 +17,8 @@ export const Files = () => {
 		</Grid>
 	);
 };
+
+export default Files;
 
 const useStyles = makeStyles((theme) => ({
 	filesWrapper: {

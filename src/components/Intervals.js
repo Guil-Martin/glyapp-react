@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles, Grid, Paper } from "@material-ui/core";
 
-export const Intervals = () => {
+const Intervals = () => {
 	const [startDate, setStartDate] = useState(); // Pass selected file default date as props
 	const [endDate, setEndDate] = useState(); // Pass selected file default date as props
 
@@ -11,6 +11,8 @@ export const Intervals = () => {
 		</Grid>
 	);
 };
+
+export default Intervals;
 
 const useStyles = makeStyles((theme) => ({
 	filesWrapper: {

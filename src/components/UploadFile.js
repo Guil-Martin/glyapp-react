@@ -1,12 +1,17 @@
-import React from 'react'
+import React from "react";
 import { makeStyles, Grid, Paper } from "@material-ui/core";
 
-export const UploadFile = () => {
+const UploadFile = () => {
 	return (
 		<Grid className={classes.container} container justifyContent="center">
-			<Paper className={classes.filesWrapper} variant="outlined">
-
-			</Paper>
+			<Paper className={classes.filesWrapper} variant="outlined"></Paper>
 		</Grid>
-	)
-}
+	);
+};
+
+export default UploadFile;
+
+const useStyles = makeStyles((theme) => ({
+	container: {},
+	filesWrapper: {},
+}));
